@@ -178,79 +178,9 @@ step5_download_ios() {
     fi
 }
 
-# # Шаг 6: Настройка конфигурации GNS3
-# step6_configure_gns3() {
-#     log_step "6. Настройка конфигурации GNS3"
-    
-#     log_info "Создание конфигурационного файла GNS3..."
-#     cat > ~/.config/GNS3/2.2/gns3_server.conf << 'EOF'
-# [Server]
-# host = 0.0.0.0
-# port = 3080
-# images_path = /root/GNS3/images
-# projects_path = /root/GNS3/projects
-# appliances_path = /root/GNS3/appliances
-# configs_path = /root/GNS3/configs
-# report_errors = True
 
-# [Dynamips]
-# allocate_hypervisor_tcp_ports = True
-# mmap_support = True
-# sparse_memory_support = True
-# ghost_ios_support = True
-# dynamips_path = /usr/local/bin/dynamips
-
-# [Ubridge]
-# ubridge_path = /usr/local/bin/ubridge
-
-# [IOU]
-# enable = False
-
-# [Qemu]
-# enable = False
-
-# [VPCS]
-# enable = True
-# EOF
-    
-#     log_info "Конфигурационный файл создан: ~/.config/GNS3/2.2/gns3_server.conf"
-# }
-
-# # Шаг 7: Создание шаблона Cisco 7200
-# step7_create_template() {
-#     log_step "7. Создание шаблона Cisco 7200"
-    
-#     cat > /tmp/c7200_template.json << 'EOF'
-# {
-#     "category": "router",
-#     "compute_id": "local",
-#     "default_name_format": "R{0}",
-#     "name": "Cisco 7200",
-#     "symbol": ":/symbols/router.svg",
-#     "template_type": "dynamips",
-#     "usage": "For IOS c7200 images",
-#     "platform": "c7200",
-#     "nvram": 256,
-#     "ram": 512,
-#     "slot0": "C7200-IO-FE",
-#     "slot1": "PA-FE-TX",
-#     "slot2": "PA-FE-TX",
-#     "slot3": "PA-FE-TX",
-#     "slot4": "",
-#     "slot5": "",
-#     "slot6": "",
-#     "wics": [],
-#     "executable": "/usr/local/bin/dynamips",
-#     "mmap": true,
-#     "sparse_memory": true
-# }
-# EOF
-    
-#     log_info "Шаблон Cisco 7200 создан: /tmp/c7200_template.json"
-# }
-
-# Шаг 8: Запуск GNS3 сервера
-step8_start_gns3() {
+# Шаг 6: Запуск GNS3 сервера
+step6_start_gns3() {
     log_step "8. Запуск GNS3 сервера"
     
     log_info "Остановка предыдущих процессов GNS3..."
@@ -289,8 +219,8 @@ step8_start_gns3() {
     cd ..
 }
 
-# Шаг 9: Финальная проверка
-step9_final_check() {
+# Шаг 7: Финальная проверка
+step7_final_check() {
     log_step "9. Финальная проверка установки"
     
     echo ""
@@ -375,10 +305,8 @@ main() {
     step3_install_dynamips
     step4_install_ubridge
     step5_download_ios
-    #step6_configure_gns3
-    #step7_create_template
-    step8_start_gns3
-    step9_final_check
+    step6_start_gns3
+    step7_final_check
     
     log_info "Установка завершена!"
 }
@@ -389,3 +317,4 @@ trap 'log_error "Установка прервана!"; exit 1' INT TERM
 # Запуск основной функции
 
 main "$@"
+

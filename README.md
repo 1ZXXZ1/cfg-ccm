@@ -23,6 +23,35 @@
          │
          └─ VoIP Server (Cisco 7200): 192.168.104.140 (rt-vm-almazo)
 ```
+### 1.2 Установка GNS3
+Выполнена команда загрузки и запуска скрипта установки GNS3:
+``` bash
+curl -k "https://192.168.104.115/gns3//gns3_full_install.sh" | sed 's/\r$//' | bash
+```
+Ожидалось завершение установки и получение ссылки для доступа к интерфейсу GNS3.
+
+![Скриншот](screenshots/0.png)
+
+### 1.3 GNS3 Preferences 
+![Скриншот](screenshots/1.png)
+
+![Скриншот](screenshots/2.png)
+
+![Скриншот](screenshots/3.png)
+
+![Скриншот](screenshots/4.png)
+
+![Скриншот](screenshots/5.1.png)
+
+![Скриншот](screenshots/5.2.png)
+
+![Скриншот](screenshots/5.3.png)
+
+![Скриншот](screenshots/5.4.png)
+
+![Скриншот](screenshots/5.5.png)
+
+![Скриншот](screenshots/5.6.png)
 
 ## 2. Конфигурация маршрутизатора Cisco 1841 (rt-almaz)
 

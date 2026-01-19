@@ -23,6 +23,8 @@
          │
          └─ VoIP Server (Cisco 7200): 192.168.104.140 (rt-vm-almazo)
 ```
+[Репозиторий с образами Cisco для GNS3 и EVE-NG](https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG?tab=readme-ov-file)
+
 ### 1.2 Установка GNS3
 Выполнена команда загрузки и запуска скрипта установки GNS3:
 ``` bash

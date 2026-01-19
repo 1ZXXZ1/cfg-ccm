@@ -21,7 +21,7 @@
     |
     └─ FastEthernet0/13-24 → VLAN 20 (VOIP_SERVERS) 192.168.104.0/24
          │
-         └─ VoIP Server (Cisco 7200): 192.168.104.140 (rt-vm-almazo)
+         └─ VoIP Server (Cisco 7200): 192.168.104.140 (rt-vm-almaz)
 ```
 [Репозиторий с образами Cisco для GNS3 и EVE-NG](https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG?tab=readme-ov-file)
 
